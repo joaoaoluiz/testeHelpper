@@ -8,13 +8,16 @@ function Detail() {
     const { detailName } = useParams()
     const detailData = data.find(item => item.nome === detailName)
 
+    const back = '<'
     return (
         <div>
-            <Link to='/'><p>x</p></Link>
+            <Link to='/'>
+                <p>{back}</p>
+            </Link>
             {Object.keys(detailData).map((info, i) => (
                 <div key={i}>
                     <h3>{info}</h3>
-                    <p>{detailData[info]}</p>
+                    <p>{detailData[info] || 'vazio'}</p>
                 </div>
             ))}
         </div>
