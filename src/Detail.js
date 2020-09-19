@@ -11,8 +11,8 @@ function Detail() {
     return (
         <div>
             <Link to='/'><p>x</p></Link>
-            {Object.keys(detailData).map(info => (
-                <div>
+            {Object.keys(detailData).map((info, i) => (
+                <div key={i}>
                     <h3>{info}</h3>
                     <p>{detailData[info]}</p>
                 </div>
